@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="icon" href="static/favicon.png" type="image/x-icon">
+    <title>Dr.AI: Symptoms Log</title>
+
+    <style>
+        .banner-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white; /* assuming the whole page has a white background */
+        }
+        
+        .predict-form {
+            display: flex;
+            flex-direction: column;
+            width: 90%; /* Adjust based on preference */
+            max-width: 500px; /* Adjust based on preference */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .predict-form input[type="text"],
+        .predict-form input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }        
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="video-background">
+        <source src="static/heartbeat(white).mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <header>
+            <div class="menu">
+                <ul>
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/symptoms">Symptoms</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="banner-area">
+            <form action="/predict" method="get" class="predict-form">
+                <input name="name" autofocus type="text" placeholder="Name">
+                <input name="age" type="number" placeholder="Age">
+                <input name="symptom1" type="text" placeholder="Symptom 1">
+                <input name="symptom2" type="text" placeholder="Symptom 2">
+                <input name="symptom3" type="text" placeholder="Symptom 3">
+                <input name="symptom4" type="text" placeholder="Symptom 4">
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
